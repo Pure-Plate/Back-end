@@ -48,8 +48,16 @@ INSTALLED_APPS = [
 
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:3001',
+    'http://pureplate.site:80',
+    'http://pureplate.site'
+]
+    
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',e
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -178,12 +186,4 @@ LOGGING = {
     },
 }
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:3001',
-    'http://pureplate.site:80',
-    'http://pureplate.site'
-]
-    
 
