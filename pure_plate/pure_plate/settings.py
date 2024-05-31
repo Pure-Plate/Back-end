@@ -60,12 +60,45 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-     'http://localhost:3000',
-     'http://127.0.0.1:3000',
-     'http://127.0.0.1:3001'
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = (
+    'http://localhost:3000',
+    'http://127.0.0.1:3001',
+    'https://www.pureplate.site:80'
+    'https://pureplate.site:80'
+    'http://www.pureplate.site:80'
+    'http://pureplate.site:80'
+    'https://www.pureplate.site:443'
+    'https://pureplate.site:443'
+    'http://www.pureplate.site:443'
+    'http://pureplate.site:443'
+    
+)
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
 ]
 
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+    
 ROOT_URLCONF = 'pure_plate.urls'
 
 TEMPLATES = [
@@ -177,13 +210,3 @@ LOGGING = {
         },
     },
 }
-
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:3001',
-    'http://pureplate.site:80',
-    'http://pureplate.site'
-]
-    
-
