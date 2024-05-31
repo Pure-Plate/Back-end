@@ -29,8 +29,6 @@ jobs:
         source venv/bin/activate
         python -m pip install Pillow
         cd pure_plate
-        apt-get update
-        apt-get install sqlite3
 
   deploy:
       runs-on: ubuntu-latest
