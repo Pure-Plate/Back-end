@@ -186,4 +186,3 @@ CORS_ALLOWED_ORIGINS = [
     'http://pureplate.site'
 ]
     
-
