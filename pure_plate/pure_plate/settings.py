@@ -67,12 +67,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-     'http://localhost:3000',
-     'http://127.0.0.1:3000',
-     'http://127.0.0.1:3001'
-]
-
 ROOT_URLCONF = 'pure_plate.urls'
 
 TEMPLATES = [
@@ -184,12 +178,3 @@ LOGGING = {
         },
     },
 }
-
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:3001',
-    'http://pureplate.site:80',
-    'http://pureplate.site'
-]
-    
