@@ -3,7 +3,7 @@ name: Django Tests
 on:
   push:
     branches:
-      - main
+      - corstest
 
 jobs:
   test:
@@ -23,6 +23,7 @@ jobs:
         python -m venv venv
         source venv/bin/activate
         pip install django
+        pip install django-cors-headers
 
     - name: Change directory
       run: |
