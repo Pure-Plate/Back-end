@@ -3,7 +3,7 @@ name: Django Tests
 on:
   push:
     branches:
-      - mockdataadd
+      - main
 
 jobs:
   test:
