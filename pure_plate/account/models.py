@@ -3,6 +3,9 @@ from django.db import models
 
 class UserManager(BaseUserManager):
     def create_user(self, username, nickname, password=None):
+        """
+        Create and return a regular user.
+        """
         if not username:
             raise ValueError('Users must have a username')
         user = self.model(username=username, nickname=nickname)
@@ -11,6 +14,9 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, username, nickname, password):
+        """
+        Create and return a superuser.
+        """
         user = self.create_user(username, nickname, password)
         user.is_admin = True
         user.save(using=self._db)
