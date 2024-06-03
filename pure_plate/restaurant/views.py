@@ -3,7 +3,14 @@ from django.db.models import Count
 from .models import Restaurant
 
 def restaurants_list(request):
+    """
+    View function to retrieve a list of restaurants.
 
+    Retrieves all restaurants from the database and constructs a JSON response with restaurant details.
+
+    Returns:
+        JsonResponse: JSON response containing a list of restaurants.
+    """
     try:
         restaurants = Restaurant.objects.all()
         
@@ -35,6 +42,3 @@ def restaurants_list(request):
 
     except Exception as e:
         return JsonResponse({'status': 400, 'message': str(e), 'data': []}, status=400)
-
-
-
