@@ -12,11 +12,16 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 
 class RegisterView(CreateAPIView):
+    """
+    API view to handle user registration.
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
 class CustomAuthToken(ObtainAuthToken):
+    """
+    API view to handle user login and token generation.
+    """
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
@@ -33,9 +38,11 @@ class CustomAuthToken(ObtainAuthToken):
             })
         return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
-
 @permission_classes([AllowAny])
 class LogoutView(APIView):
+    """
+    API view to handle user logout by deleting the authentication token.
+    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
