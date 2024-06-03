@@ -8,11 +8,19 @@ from rest_framework.permissions import AllowAny
 
 from .models import User, Restaurant, Review
 
-
 @api_view(['POST'])
 @csrf_exempt
 @permission_classes([AllowAny])
 def review(request):
+    """
+    View function to create a new review.
+
+    Accepts POST requests with JSON data containing information about the review.
+    Validates the data and creates a new review in the database.
+
+    Returns:
+        JsonResponse: JSON response indicating success or failure of the review creation.
+    """
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -55,6 +63,15 @@ def review(request):
 @csrf_exempt
 @permission_classes([AllowAny])
 def reviews_list(request):
+    """
+    View function to retrieve a list of reviews for a restaurant.
+
+    Accepts GET requests with the restaurant name as a query parameter.
+    Retrieves reviews for the specified restaurant and returns them as JSON.
+
+    Returns:
+        JsonResponse: JSON response containing a list of reviews for the restaurant.
+    """
     if request.method == 'GET':
         restaurant_name = request.GET.get('name')
         
